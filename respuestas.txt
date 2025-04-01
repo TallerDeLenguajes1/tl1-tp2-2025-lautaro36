@@ -1,2 +1,6 @@
 ¿Puede ver el archivo tp2_1_2.c? ¿Por qué?
 no puede verse el archivo. porque fue commiteado en la branch main[1;6Opcion_2, entonces al estar en main, no debe verse
+
+luego de hacer el commit agregando el txt por primera vez, en source control se puede ver que se crea una nueva rama, de color amarillo, que sale de la rama principal, luego del commit "inicial"
+
+luego de usar merge, la rama amarilla que se desprendia de main, se une a la rama principal en el commit merge Opcion_2, saltandose el commit "agrego el txt en main", donde se agregaba eel txt por primera vez
