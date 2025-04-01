@@ -13,7 +13,7 @@ struct {
 void velocidadAnioNucleos (compu *pcs);
 //void elijoCpu (compu *pcs, char *nombresCpu[6]);
 void listarPCs(compu *pcs, int cantidad);
-//void mostrarMasVieja(compu *pcs, int cantidad);
+void mostrarMasVieja(compu *pcs, int cantidad);
 
 int main() {
     int cantidad=5;
@@ -22,7 +22,7 @@ int main() {
     velocidadAnioNucleos(arregloCompus);
     //elijoCpu(arregloCompus, tipos);
     listarPCs(arregloCompus, cantidad);
-    //mostrarMasVieja(arregloCompus, cantidad);
+    mostrarMasVieja(arregloCompus, cantidad);
 
 
     return 0;
@@ -52,14 +52,13 @@ void listarPCs(compu *pcs, int cantidad) {
        }
 }
 
-/*void mostrarMasVieja(compu *pcs, int cantidad) {
-    int i=0, anio = pcs->anio, vieja;
+void mostrarMasVieja(compu *pcs, int cantidad) {
+    int i=0, anio = pcs->anio, pcVieja;
     for (i=0; i<cantidad; i++) {
-        if(anio < pcs->anio) {
-            anio = pcs->anio;
-            vieja=i;
+        if(anio > (pcs+i)->anio) {
+            anio = (pcs+i)->anio;
+            pcVieja=i;
         }
     }
-    printf("La pc mas vieja tiene: \n, velocidad:%d \t, anio:%d\t, nucleos%d. ", i+1, (pcs+i)->velocidad, (pcs+i)->anio, (pcs+i)->cantidad_nucleos);
+    printf("La pc mas vieja tiene:\nvelocidad:%d\tanio:%d\tnucleos%d. ", (pcs+pcVieja)->velocidad, (pcs+pcVieja)->anio, (pcs+pcVieja)->cantidad_nucleos);
 }
-    */
